@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Result</h2>
+
+<h3>Overall score: @ViewBag.Score</h3>
+<div>
+    @if (ViewBag.Score > 0 && ViewBag.Score < 16)
+    {
+        <p>Starter level</p>
+    }
+    else if (ViewBag.Score > 15 && ViewBag.Score < 31)
+    {
+        <p> Elementary Unit 1</p>
+    }
+    else if (ViewBag.Score > 30 && ViewBag.Score < 51)
+    {
+        <p>Elementary Unit 7</p>
+    }
+    else if (ViewBag.Score > 50 && ViewBag.Score < 76)
+    {
+        <p> Pre - intermediate Unit 1</p>
+    }
+    else if (ViewBag.Score > 75 && ViewBag.Score < 101)
+    {
+        <p>Pre - intermediate Unit 7</p>
+    }
+    else if (ViewBag.Score > 100 && ViewBag.Score < 126)
+    {
+        <p> Intermediate Unit 1</p>
+    }
+    else if (ViewBag.Score > 125 && ViewBag.Score < 151)
+    {
+        <p> Intermediate Unit 6</p>
+    }
+    else if (ViewBag.Score > 150 && ViewBag.Score < 171)
+    {
+        <p>Upper Intermediate Unit 1</p>
+    }
+    else if (ViewBag.Score > 170 && ViewBag.Score < 186)
+    {
+        <p>Upper Intermediate Unit 6</p>
+    }
+    else if (ViewBag.Score > 185)
+    {
+        <p>Advanced level</p>
+    }
+
+
+
+</div>

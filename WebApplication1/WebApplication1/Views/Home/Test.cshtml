@@ -1,0 +1,29 @@
+﻿@model List<Question>
+@{
+    ViewData["Title"] = "Placement Test";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+<form action="Result" method="post">
+    <fieldset>
+        <legend>Answer the questions: </legend>
+        <ol>
+            @foreach (var question in Model)
+            {
+                <li>
+                    <h4> @question.QuestionText</h4>
+                    <ul style="list-style:none;">
+                        @foreach (var answer in question.Answers)
+                        {
+                            <li>
+                                <input type="radio" name="@question.Id" value="@answer.IsCorrect" id="@answer.Id" />
+                                <label for="@answer.Id">@answer.AnswerText</label>
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+        </ol>
+        <input type="submit" value="Get result">
+        </fieldset>
+</form>
